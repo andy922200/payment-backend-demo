@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express"
 import { CustomError } from "../types/index"
 
-export const getHttpResponse = ({data, message}:{data: string | any[], message?: string}) => {
+export const getHttpResponse = ({data, message}:{data: string | any[] | Record<string, any>, message?: string}) => {
     const result = { status: "success" } as Record<string, any>
     if (data) result.data = data
     if (message) result.message = message
